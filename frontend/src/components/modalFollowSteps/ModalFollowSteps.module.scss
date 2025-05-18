@@ -1,0 +1,125 @@
+@import '../../index.module.scss';
+
+.modal {
+    position: relative;
+    overflow: auto; 
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5); 
+    backdrop-filter: blur(5px);
+    z-index: 999;
+  }
+
+.modalWrapper {
+    position: fixed; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 430px;
+    padding: 32px;
+    border-radius: 20px;
+    background-color: $black-color;
+    border: 2px solid $slate-gray;
+    @include flex-center;
+    align-items: start;
+    flex-direction: column;
+    gap: 32px;
+    z-index: 1000;
+
+
+    &__top {
+        @include flex-container;
+        width: 100%;
+
+        &__title {
+            @include text-style($text-color: $white-color, $fz: 32px, $lh: 40px, $fw: 700);
+        }
+
+        img {
+            height: 40px;
+            width: 40px;
+        }
+    }
+
+    &__purshasing {
+        @include flex-center;
+        gap: 20px;
+
+        &__title {
+            color: $white-color;
+            margin-bottom: 3px;
+        }
+
+        &__subtitle {
+            font-size: 14px;
+            color: $muted-blue;
+        }
+    }
+
+    &__infoError {
+        @include flex-container;
+        background-color: $slate-gray;
+        padding: 24px;
+        border-radius: 8px;
+        color: $error-color;
+        width: 100%;
+
+        &__subtitle {
+            margin-top: 5px;
+            font-size: 12px;
+        }
+
+        &__avatar {
+            width: 48px;
+            height: 48px;
+        }
+    }
+
+    &__buttons {
+        @include flex-center;
+        align-items: start;
+        flex-direction: column;
+        gap: 8px;
+        width: 100%;
+
+        &__countine {
+            width: 100%;
+            @include button($btn-color,
+                $bg-color: $blue-color,
+                $br-radius: $br-radius,
+                $cursor: $cursor );
+            padding: 12px 16px;
+            color: $white-color;
+            border: none;
+            text-decoration: none;
+
+            &:hover {
+                transition: 0.3s ease-out;
+                background-color: $white-color;
+                color: $blue-color;
+            }
+        }
+
+        &__cancel {
+            width: 100%;
+            @include clear-button();
+            padding: 12px 16px;
+            color: $white-color;
+            border: none;
+            text-decoration: none;
+            justify-content: center;
+
+            &:hover {
+                transition: 0.3s ease-out;
+                background-color: $white-color;
+                color: $blue-color;
+            }
+        }
+    }
+}

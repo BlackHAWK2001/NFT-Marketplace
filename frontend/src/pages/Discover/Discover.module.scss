@@ -1,0 +1,291 @@
+@import "../../index.module.scss";
+
+.discover {
+  padding-top: 80px;
+  padding-bottom: 80px;
+
+  .yourKeywords {
+    width: 100%;
+    position: relative;
+    border-bottom: 1px solid $dark-gray;
+
+    .yourKeywords__searchButton {
+      position: absolute;
+      background: $blue-color;
+      padding: 13px 15px;
+      border-radius: 50%;
+      border: none;
+      right: 0;
+    }
+
+    .yourKeywords__input {
+      @include text-style($text-color: $white-color,
+        $fz: 24px,
+        $lh: 20px,
+        $fw: 600);
+
+      width: 90%;
+      background-color: transparent;
+      border: none;
+      color: $white-color;
+      padding-bottom: 40px;
+      word-break: break-word;
+    }
+
+    .yourKeywords__input::placeholder {
+      color: $white-color;
+    }
+
+    .yourKeywords__input:focus {
+      outline: none;
+      animation: inputAnimation 0.5s ease-in-out;
+    }
+
+    @keyframes inputAnimation {
+      from {
+        width: 50%;
+      }
+
+      to {
+        width: 90%;
+      }
+    }
+  }
+
+  .content {
+    padding-top: 60px;
+  }
+
+  .content__head {
+    .content__head__navigation {
+      @include flex-center;
+      justify-content: flex-end;
+      gap: 12px;
+
+      li {
+        list-style: none;
+        padding: 6px 12px;
+
+        .navActive {
+          background-color: $white-color;
+          padding: 10px;
+        }
+
+        a {
+          text-decoration: none;
+          color: $muted-blue;
+          transition: all .3s ease-in-out;
+        }
+
+        a:hover {
+          color: $white-color;
+        }
+      }
+
+      li.active {
+        background-color: $white-color;
+        color: #23262F;
+      }
+    }
+  }
+
+  .discover__content {
+    @include flex-container;
+    align-items: start;
+    padding-top: 48px;
+  }
+
+  .filter {
+    width: 256px;
+    margin-right: 32px;
+
+    .filter__content {
+      border-bottom: 1px solid $dark-gray;
+      padding-bottom: 20px;
+    }
+
+    .filter__price {
+      margin-top: 20px;
+      border-bottom: 1px solid $dark-gray;
+      padding-bottom: 20px;
+
+      .filter__price__title {
+        @include text-style($text-color: $white-color,
+          $fz: 14px,
+          $lh: 20px,
+          $fw: 700);
+
+        margin-bottom: 10px;
+        width: 256px;
+        color: $light-gray;
+      }
+
+      .filter__range {
+        position: relative;
+
+        input[type="range"] {
+          -webkit-appearance: none;
+          height: 8px;
+          width: 256px;
+          border-radius: 4px;
+          background: $slate-gray;
+          outline: none;
+          padding: 0;
+          margin: 0;
+
+          &::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 16px;
+            height: 16px;
+            background: $blue-color;
+            border: 2px solid #ffffff;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+          }
+
+          &::-moz-range-thumb {
+            width: 16px;
+            height: 16px;
+            background: $blue-color;
+            border: 2px solid #ffffff;
+            border-radius: 50%;
+            cursor: pointer;
+          }
+        }
+
+        .filter__range__value {
+          position: absolute;
+          transform: translateX(-50%);
+          bottom: 30px;
+          left: 128px;
+
+          @include text-style($text-color: $white-color,
+            $fz: 12px,
+            $lh: 20px,
+            $fw: 700);
+          color: #ffffff;
+          background: $blue-color;
+          padding: 5px 10px;
+          border-radius: 4px;
+          white-space: nowrap;
+        }
+      }
+
+      .filter__range__labels {
+        @include flex-container;
+        margin-top: 5px;
+        width: 256px;
+
+        span {
+          @include text-style($text-color: $white-color,
+            $fz: 12px,
+            $lh: 20px,
+            $fw: 700);
+
+          color: $muted-blue;
+        }
+      }
+    }
+
+    .filter__likes,
+    .filter__colors,
+    .filter__creator {
+      margin-top: 24px;
+      text-transform: uppercase;
+
+      @include text-style($text-color: $light-gray,
+        $fz: 12px,
+        $lh: 20px,
+        $fw: 700);
+    }
+
+    .filter__reset {
+      @include flex-center;
+      gap: 8px;
+      color: $white-color;
+      margin-top: 25px;
+    }
+  }
+
+  .discover__cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+
+    .discover__card {
+      background-color: $slate-gray;
+      padding: 12px;
+      border-radius: 12px;
+      margin-top: 32px;
+      width: calc(33% - 64px / 3);
+      max-height: 500px;
+      word-break: break-all;
+      text-decoration: none;
+
+      .nftImage {
+        border-radius: 16px;
+        margin-bottom: 20px;
+        width: auto;
+        max-width: 100%;
+      }
+
+      .discover__card__infoWrapper {
+        @include flex-container;
+        color: $white-color;
+
+        .discover__card__price {
+          @include text-style($text-color: $light-green-color,
+            $fz: 12px,
+            $lh: 20px,
+            $fw: 700);
+
+          border: 1px solid $light-green-color;
+          border-radius: 4px;
+          padding: 4px;
+        }
+      }
+
+      .discover__card__inStock {
+        @include flex-container;
+        margin-top: 10px;
+
+        .discover__card__avatars {
+          position: relative;
+          height: 24px;
+
+          img {
+            width: 24px;
+            height: 24px;
+          }
+        }
+
+        .discover__card__amountInStock {
+          @include text-style($text-color: $dark-white,
+            $fz: 12px,
+            $lh: 20px,
+            $fw: 700);
+        }
+      }
+
+      .discover__card__bid {
+        margin-top: 32px;
+
+        @include flex-container;
+
+        @include text-style($text-color: $dark-white,
+          $fz: 12px,
+          $lh: 20px,
+          $fw: 700);
+      }
+
+      margin-top: 10px;
+      border-top: 1px solid $dark-gray;
+      padding-top: 10px;
+
+      .price {
+        color: $dark-white;
+      }
+    }
+  }
+}

@@ -1,0 +1,63 @@
+@import "../../index.module.scss";
+
+.accordionItem {
+  .accordionBlock {
+    @include flex-container;
+    border-top: 2px solid $dark-gray;
+    padding: 32px 0;
+
+    .accordionTitle {
+      @include text-style(
+        $text-color: $white-color,
+        $fz: 16px,
+        $lh: 24px,
+        $fw: 500
+      );
+      font-family: $font-family-alt;
+    }
+    .arrowDown {
+      width: 35px;
+      height: auto;
+    }
+  }
+
+  .accordionContent {
+    @include text-style(
+      $text-color: $muted-blue,
+      $fz: 16px,
+      $lh: 24px,
+      $fw: 400
+    );
+    font-family: $font-family-alt;
+    margin-bottom: 24px;
+    @include flex-center;
+    align-items: flex-start;
+    flex-direction: column;
+
+    .accordionBtn {
+      @include button(
+        $btn-color: $white-color,
+        $bg-color: transparent,
+        $br-radius: 100px,
+        $cursor: pointer
+      );
+      padding: 10px 20px;
+      margin-top: 24px;
+      border: 2px solid $muted-blue;
+      width: 130px;
+      height: 40px;
+      @include text-style(
+        $text-color: $muted-blue,
+        $fz: 14px,
+        $lh: 16px,
+        $fw: 700
+      );
+      text-decoration: none;
+      &:hover {
+        transition: 0.3s;
+        background-color: $muted-blue;
+        color: $white-color;
+      }
+    }
+  }
+}

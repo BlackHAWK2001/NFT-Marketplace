@@ -1,0 +1,327 @@
+@import '../../index.module.scss';
+
+
+.createPage {
+  margin: 128px 0;
+
+  .createPageContent {
+    @include flex-container;
+    align-items: flex-start;
+
+    .leftContent {
+      width: 640px;
+      height: auto;
+
+      .contentTop {
+        @include flex-container;
+        align-items: flex-start;
+        margin-bottom: 40px;
+
+        .contentTitle {
+          @include text-style($text-color: $white-color,
+            $fz: 48px,
+            $lh: 56px,
+            $fw: 700);
+          width: 468px;
+          height: 112px;
+        }
+
+        .switchButton {
+          @include button($btn-color: $white-color,
+            $bg-color: transparent,
+            $br-radius: 90px,
+            $cursor: pointer);
+          border: 2px solid $muted-blue;
+          padding: 12px 16px;
+          transition: 0.3s;
+
+          &:hover {
+            background-color: $muted-blue;
+            color: white;
+          }
+        }
+      }
+
+      .uploadTitle {
+        @include text-style($text-color: $white-color,
+          $fz: 16px,
+          $lh: 24px,
+          $fw: 400);
+        font-family: $font-family-alt;
+        margin-bottom: 4px;
+      }
+
+      .uploadContenttTitle {
+        @include text-style($text-color: $muted-blue,
+          $fz: 12px,
+          $lh: 20px,
+          $fw: 400);
+        font-family: $font-family-alt;
+        margin-bottom: 16px;
+      }
+
+      .uploadContent {
+        .uploadZone {
+          height: 182px;
+          width: 640px;
+          margin-bottom: 40px;
+          cursor: pointer;
+        }
+      }
+
+      .uploadDetails {
+        @include text-style($text-color: $white-color,
+          $fz: 16px,
+          $lh: 24px,
+          $fw: 400);
+        font-family: $font-family-alt;
+        margin-bottom: 32px;
+      }
+
+      .detailsBlock {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+
+        label {
+          @include text-style($text-color: $light-gray,
+            $fz: 12px,
+            $lh: 12px,
+            $fw: 700);
+          font-family: $font-family-alt;
+          margin-bottom: 12px;
+        }
+
+        .detailsFiled {
+          background: transparent;
+          border: 2px solid $dark-gray;
+          border-radius: 12px;
+          padding: 12px 16px;
+          width: 640px;
+          margin-bottom: 32px;
+          color: $white-color;
+
+          &:focus {
+            outline: none;
+          }
+
+          &::placeholder {
+            @include text-style($text-color: $muted-blue,
+              $fz: 14px,
+              $lh: 24px,
+              $fw: 500);
+            font-family: $font-family-alt;
+          }
+        }
+      }
+
+      .line {
+        display: block;
+        height: 1px;
+        width: 640px;
+        background-color: $dark-gray;
+        margin-bottom: 40px;
+      }
+
+      .detailsInfo {
+        @include flex-container;
+        width: 100%;
+        margin-bottom: 32px;
+
+        h3 {
+          @include text-style($text-color: $white-color,
+            $fz: 16px,
+            $lh: 24px,
+            $fw: 500);
+          font-family: $font-family-alt;
+          margin-bottom: 4px;
+        }
+
+        p {
+          @include text-style($text-color: $muted-blue,
+            $fz: 12px,
+            $lh: 20px,
+            $fw: 400);
+          font-family: $font-family-alt;
+        }
+
+        .detailsInfoField {
+          position: relative;
+          display: inline-block;
+          width: 48px;
+          height: 24px;
+          margin: 0;
+          vertical-align: top;
+          background: $slate-gray;
+          border: none;
+          border-radius: 30px;
+          outline: none;
+          cursor: pointer;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          transition: all 0.3s cubic-bezier(0.2, 0.85, 0.32, 1.2);
+
+          &::after {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            left: 4px;
+            top: 4px;
+            width: 16px;
+            height: 16px;
+            background-color: $blue-color;
+            border-radius: 50%;
+            transform: translateX(0);
+            transition: all 0.3s cubic-bezier(0.2, 0.85, 0.32, 1.2);
+          }
+
+          &:checked::after {
+            transform: translateX(calc(100% + 3px));
+            background-color: #fff;
+          }
+
+          &:checked {
+            background-color: $blue-color;
+          }
+        }
+      }
+
+      .detailsCheckedInput {
+        background: transparent;
+        border: 2px solid $dark-gray;
+        border-radius: 12px;
+        padding: 12px 16px;
+        width: 640px;
+        margin-bottom: 32px;
+        color: $white-color;
+
+        &:focus {
+          outline: none;
+        }
+
+        &::placeholder {
+          @include text-style($text-color: $muted-blue,
+            $fz: 14px,
+            $lh: 24px,
+            $fw: 500);
+          font-family: $font-family-alt;
+        }
+
+      }
+
+      .detailsCollection {
+        .collectionTitle {
+          @include text-style($text-color: $white-color,
+            $fz: 16px,
+            $lh: 24px,
+            $fw: 400);
+          font-family: $font-family-alt;
+        }
+
+        .collectionSubtitle {
+          @include text-style($text-color: $white-color,
+            $fz: 12px,
+            $lh: 20px,
+            $fw: 400);
+          font-family: $font-family-alt;
+          margin-bottom: 24px;
+        }
+
+        .detailsCollections {
+          @include flex-container;
+          gap: 8px;
+          margin-bottom: 40px;
+
+          .collection {
+            width: 160px;
+            height: 124px;
+            padding: 24px;
+            background-color: $slate-gray;
+            border-radius: 16px;
+            @include text-style($text-color: $white-color,
+              $fz: 14px,
+              $lh: 16px,
+              $fw: 600);
+            font-family: $font-family-alt;
+
+            &:hover {
+              background-color: $white-color;
+              cursor: pointer;
+              color: $black-color;
+              transition: 0.3s;
+            }
+
+            img {
+              margin-bottom: 12px;
+            }
+          }
+        }
+      }
+
+      .createNft {
+        @include button($btn-color: $white-color,
+          $bg-color: $blue-color,
+          $br-radius: 90px,
+          $cursor: pointer);
+        padding: 16px 16px;
+        border: none;
+        width: 159px;
+        @include text-style($text-color: $white-color,
+          $fz: 16px,
+          $lh: 16px,
+          $fw: 700);
+        transition: 0.3s;
+
+        &:hover {
+          background-color: $white-color;
+          color: $blue-color;
+        }
+      }
+    }
+
+    .rightContent {
+      width: 352px;
+
+      .rightBlock {
+        padding: 24px;
+        border-radius: 16px;
+        border: 2px solid $dark-gray;
+
+        .previewTitle {
+          @include text-style($text-color: $white-color, $fz: 24px, $lh: 32px, $fw: 600);
+          margin-bottom: 24px;
+        }
+
+        .previeImg {
+          width: 100%;
+          height: 303px;
+          margin-bottom: 24px;
+        }
+
+        .nftPreviewInfo {
+          @include flex-container;
+          margin-bottom: 24px;
+
+          .nftTitle {
+            @include text-style($text-color: $white-color, $fz: 16px, $lh: 24px, $fw: 500);
+            font-family: $font-family-alt;
+          }
+
+          .nftPrice {
+            @include text-style($text-color: $light-green-color, $fz: 12px, $lh: 12px, $fw: 700);
+            background: none;
+            border: 2px solid $light-green-color;
+            padding: 8px;
+            border-radius: 4px;
+            font-family: $font-family-alt;
+          }
+        }
+
+        .nftDeleteButton {
+          @include clear-button;
+        }
+      }
+    }
+  }
+}

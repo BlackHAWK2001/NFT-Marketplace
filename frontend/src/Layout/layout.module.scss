@@ -1,0 +1,14 @@
+@import '../index.module.scss';
+
+.layout__wrapper{
+    background-color: $black-color;
+    width: 100%;
+    min-height: 100%;
+    flex:  0 0  auto;
+
+    .layoutContent{
+        height: 100%;
+        min-height: auto;
+    }
+}
+

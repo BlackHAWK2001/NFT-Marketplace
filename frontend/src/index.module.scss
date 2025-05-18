@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+$font-family-main:"Dm Sans", sans-serif;
+$font-family-alt: "Poppins", sans-serif;
+
+$black-color: #141416;
+$white-color:#FCFCFD;
+$blue-color: #3772FF;
+$light-green-color: #45B26B;
+$muted-blue:#777E90;
+$dark-gray: #353945;
+$slate-gray: #23262F;
+$light-gray: #B1B5C3;
+$dark-white: #E6E8EC;
+$error-color: #EF466F;
+
+$text-font-style:14px;
+$text-line-height: 16px;
+$text-font-weight: 700;
+
+$text-color: $muted-blue;
+$bg-color: if($blue-color != null, $blue-color, $black-color);
+$br-radius: 90px;
+$cursor:pointer;
+
+$btn-color:$white-color;
+$fz: $text-font-style;
+$lh:  $text-line-height;
+$fw: $text-font-weight;
+
+$text-singleColor: $muted-blue;
+$fnt-weight: 400;
+$ln-height:20px;
+$fnt-size: 12px;
+
+
+
+@mixin single-text ($text-singleColor, $fnt-size, $ln-height, $fnt-weight){
+  color: $text-singleColor;
+  font-size: $fnt-size;
+  line-height: $ln-height;
+  font-weight: $fnt-weight;
+}
+
+
+@mixin clear-button{
+  color: $muted-blue;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 90px;
+  border: none;
+  @include flex-center;
+
+  .removeIcon{
+    margin-right: 8px;
+}
+}
+
+@mixin button($btn-color, $bg-color, $br-radius, $cursor){
+  color: $btn-color;
+  background-color: $bg-color;
+border-radius: $br-radius;
+ cursor: $cursor;
+}
+
+
+@mixin text-style($text-color, $fz, $lh, $fw){
+  color: $text-color;
+  font-size: $fz;
+  line-height: $lh;
+font-weight: $fw;
+}
+
+@mixin flex-container( $justify: space-between, $align: center) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align; 
+}
+
+@mixin flex-center($align: center){
+  display: flex;
+  align-items: center;
+}
+
+
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+.container{
+  width: 100%;
+max-width: 1120px;
+margin: 0 auto;
+}

@@ -1,0 +1,45 @@
+{
+  "name": "nft-marketplace-backend",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "concurrently \"nodemon server.js\" \"nodemon kafkaClient.js\" \"nodemon kafkaConsumer.js\"",
+    "kafkaCli": "nodemon kafkaClient.js",
+    "kafkaCon": "nodemon kafkaConsumer.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "description": "",
+  "dependencies": {
+    "@redis/client": "^1.6.0",
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "elasticsearch": "^16.7.3",
+    "express": "^4.21.2",
+    "helmet": "^8.0.0",
+    "ioredis": "^5.4.2",
+    "joi": "^17.13.3",
+    "jsonwebtoken": "^9.0.2",
+    "kafka-node": "^5.0.0",
+    "mongodb": "^6.12.0",
+    "mongoose": "^8.9.5",
+    "morgan": "^1.10.0",
+    "redis": "^4.7.0",
+    "socket.io": "^4.8.1",
+    "socket.io-client": "^4.8.1",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1",
+    "util": "^0.12.5",
+    "winston": "^3.17.0",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "eslint": "^9.18.0",
+    "nodemon": "^3.1.9"
+  }
+}

@@ -1,0 +1,72 @@
+@import '../../index.module.scss';
+
+.notFound {
+  padding: 136px 0;
+  .notFoundContent {
+    @include flex-center;
+    flex-direction: column;
+    width: 100%;
+    height: 709px;
+    .notFoundImage {
+      margin-bottom: 96px;
+    }
+    .notFoundInfo {
+      @include flex-container;
+      flex-direction: column;
+      width: 736px;
+      height: 112px;
+      text-align: center;
+      .notFoundTitle {
+        @include text-style(
+          $text-color: $white-color,
+          $fz: 48px,
+          $lh: 56px,
+          $fw: 700
+        );
+        margin-bottom: 8px;
+      }
+      .notFoundSubtitle {
+        @include text-style(
+          $text-color: $muted-blue,
+          $fz: 14px,
+          $lh: 24px,
+          $fw: 500
+        );
+        font-family: $font-family-alt;
+        margin-bottom: 24px;
+      }
+      .notFoundSearchForm {
+        @include flex-center;
+        position: relative;
+
+        .notFoundInput {
+          background: transparent;
+          padding: 14px 48px 14px 16px; 
+          border-radius: 90px;
+          border: 2px solid $muted-blue;
+          width: 332px;
+
+          &::placeholder {
+            color: $muted-blue;
+          }
+
+          &:focus {
+            outline: none;
+            color: $muted-blue;
+            background: transparent;
+          }
+        }
+
+        .footerButtonRight {
+          position: absolute;
+          top: 50%;
+          right: 10px; 
+          transform: translateY(-50%); 
+          width: 32px; 
+          height: 32px;
+          cursor: pointer; 
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,122 @@
+@import "../../index.module.scss";
+
+.footer {
+  background-color: $black-color;
+  border-top: 1px solid $dark-gray;
+
+  .footerContent {
+    padding: 80px 0 50px;
+
+    border-bottom: 2px solid $dark-gray;
+
+    .footerTop {
+      @include flex-container;
+      align-items: flex-start;
+
+      .footerContentColumn {
+        @include flex-center;
+        flex-direction: column;
+        align-items: flex-start;
+
+        .footerLogo {
+          margin-bottom: 32px;
+        }
+
+        .footerSublogoTitle {
+          @include text-style($text-color: $dark-white,
+            $fz: 24px,
+            $lh: 32px,
+            $fw: 500);
+          width: 256px;
+          height: 64px;
+          font-family: $font-family-alt;
+        }
+
+        .footerColumnTitle {
+          @include text-style($text-color: $white-color,
+            $fz: 16px,
+            $lh: 24px,
+            $fw: 600);
+          font-family: $font-family-alt;
+        }
+
+        .footerContentBlock {
+          margin-top: 40px;
+
+          .footerColumnSubtitle {
+            @include text-style($text-color: $muted-blue,
+              $fz: 14px,
+              $lh: 16px,
+              $fw: 600);
+            margin-bottom: 24px;
+
+            &:last-of-type {
+              margin-bottom: 0;
+            }
+          }
+        }
+
+        .footerTitleNewsseller {
+          @include text-style($text-color: $white-color,
+            $fz: 16px,
+            $lh: 24px,
+            $fw: 600);
+          font-family: $font-family-alt;
+          margin-bottom: 40px;
+        }
+
+        .footerNewssellerDesc {
+          @include text-style($text-color: $dark-white,
+            $fz: 14px,
+            $lh: 24px,
+            $fw: 600);
+          width: 322px;
+          height: 48px;
+        }
+      }
+
+      .footerForm {
+        margin-top: 24px;
+        @include flex-center;
+        position: relative;
+
+        .footerInput {
+          background: transparent;
+          padding: 14px 8px 14px 16px;
+          border-radius: 90px;
+          border: 2px solid $muted-blue;
+          width: 332px;
+
+          &::placeholder {
+            color: $muted-blue;
+          }
+
+          &:focus {
+            outline: none;
+            color: $muted-blue;
+          }
+        }
+
+        .footerButtonRight {
+          position: absolute;
+          top: 7px;
+          right: 8px;
+        }
+      }
+    }
+  }
+
+  .footerBottom {
+    padding: 32px 0;
+    @include flex-container;
+    border-top: 1px solid $dark-gray;
+
+    .footerBottomTitle {
+      @include text-style($text-color: $muted-blue,
+        $fz: 12px,
+        $lh: 20px,
+        $fw: 500);
+      font-family: $font-family-alt;
+    }
+  }
+}

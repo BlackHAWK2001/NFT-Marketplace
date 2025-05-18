@@ -1,0 +1,810 @@
+@import "../../index.module.scss";
+
+.header {
+  width: 100%;
+  height: 81px;
+  padding: 20px 0;
+  border-bottom: 1px solid $dark-gray;
+  position: relative;
+
+  .header__content {
+    @include flex-container;
+    width: 100%;
+
+    .header__left {
+      @include flex-center;
+
+      .header__border {
+        display: block;
+        border-right: 2px solid $dark-gray;
+        margin: 0 32px;
+        height: 40px;
+      }
+
+      .header__menu {
+        @include flex-center;
+
+        .header__list {
+          @include flex-center;
+
+          li {
+            &:last-of-type {
+              margin-left: 32px;
+            }
+
+            a {
+              text-decoration: none;
+              @include text-style($text-color, $fz, $lh, $fw);
+            }
+          }
+        }
+      }
+    }
+
+    .header__right {
+      @include flex-center;
+
+      .search__form {
+        position: relative;
+        margin-right: 36px;
+
+        .search__input {
+          border: 2px solid $dark-gray;
+          padding: 10px 16px;
+          border-radius: 8px;
+          width: 256px;
+          height: 40px;
+          background-color: transparent;
+
+          &::placeholder {
+            color: $muted-blue;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 20px;
+          }
+
+          &:focus {
+            outline: none;
+            color: $muted-blue;
+          }
+        }
+
+        .search__icon {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+        }
+      }
+
+      .right__notification {
+        margin-right: 24px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+
+        .notification__icon {
+          position: relative;
+        }
+
+        .notification__counter {
+          background-color: $light-green-color;
+          width: 16px;
+          height: 18px;
+          border-radius: 10px;
+          text-align: center;
+          position: absolute;
+          top: 20px;
+          font-size: 15px;
+          color: $white-color;
+        }
+      }
+
+      .header__buttons {
+        @include flex-center;
+        gap: 12px;
+
+        .button__upload {
+          @include button($btn-color,
+            $bg-color: $blue-color,
+            $br-radius: $br-radius,
+            $cursor: $cursor );
+          padding: 12px 16px;
+          color: $white-color;
+          border: none;
+          text-decoration: none;
+
+          &:hover {
+            transition: 0.3s ease-out;
+            background-color: $white-color;
+            color: $blue-color;
+          }
+        }
+
+        .dropProfile {
+          position: absolute;
+          top: 60px;
+          right: 160px;
+        }
+
+        .userIconWrapper {
+          position: relative;
+          @include flex-center;
+          flex-direction: column;
+
+          .button__wallet {
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+
+            &:hover {
+              background: rgba(0, 0, 0, 0.1);
+            }
+          }
+
+          .userDropdownList {
+            position: absolute;
+            top: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 5px;
+            padding: 5px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: block;
+            opacity: 1;
+            pointer-events: auto;
+
+            .userDropdownItem {
+              display: block;
+              padding: 8px 15px;
+              font-size: 14px;
+              color: black;
+              text-align: center;
+              white-space: nowrap;
+              text-decoration: none;
+
+              &:hover {
+                background: rgba(0, 0, 0, 0.1);
+              }
+            }
+          }
+        }
+      }
+
+      .header__dropdown {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .header {
+    .container {
+      width: 100%;
+      padding: 20px 80px;
+
+      .header__content {
+        @include flex-center;
+
+        .header__left {
+          .header__border {
+            display: none;
+          }
+
+          .header__menu {
+            .header__list {
+              display: none;
+            }
+          }
+        }
+
+        .header__right {
+          .right__notification {
+            .notification__counter {
+              top: 43px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 902px) {
+  .header {
+    .container {
+      width: 100%;
+
+      .header__content {
+        .header__left {
+          .header__border {
+            display: none;
+          }
+
+          .header__menu {
+            .header__list {
+              display: none;
+            }
+          }
+        }
+
+        .header__right {
+          .search__form {
+            display: none;
+          }
+
+          .right__notification {
+            display: none;
+          }
+
+          .header__buttons {
+            display: none;
+          }
+
+          .header__dropdown {
+            display: block;
+            background-color: $black-color;
+            color: $white-color;
+            border: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .header {
+    .container {
+      width: 100%;
+      padding: 48px 32px;
+    }
+  }
+}
+
+
+
+
+
+// @import "../../index.module.scss";
+
+// .header {
+//   width: 100%;
+//   height: 81px;
+//   padding: 20px 0;
+//   border-bottom: 1px solid $dark-gray;
+//   position: relative;
+
+//   .header__content {
+//     @include flex-container;
+//     width: 100%;
+
+//     .header__left {
+//       @include flex-center;
+
+//       .header__border {
+//         display: block;
+//         border-right: 2px solid $dark-gray;
+//         margin: 0 32px;
+//         height: 40px;
+//       }
+
+//       .header__menu {
+//         @include flex-center;
+
+//         .header__list {
+//           @include flex-center;
+
+//           li {
+//             &:last-of-type {
+//               margin-left: 32px;
+//             }
+
+//             a {
+//               text-decoration: none;
+//               @include text-style($text-color, $fz, $lh, $fw);
+//             }
+//           }
+//         }
+//       }
+//     }
+
+//     .header__right {
+//       @include flex-center;
+
+//       .search__form {
+//         position: relative;
+//         margin-right: 36px;
+
+//         .search__input {
+//           border: 2px solid $dark-gray;
+//           padding: 10px 16px;
+//           border-radius: 8px;
+//           width: 256px;
+//           height: 40px;
+//           background-color: transparent;
+
+//           &::placeholder {
+//             color: $muted-blue;
+//             font-weight: 400;
+//             font-size: 12px;
+//             line-height: 20px;
+//           }
+
+//           &:focus {
+//             outline: none;
+//             color: $muted-blue;
+//           }
+//         }
+
+//         .search__icon {
+//           position: absolute;
+//           top: 10px;
+//           right: 10px;
+//         }
+//       }
+
+//       .right__notification {
+//         margin-right: 24px;
+//         background: transparent;
+//         border: none;
+//         cursor: pointer;
+
+//         .notification__icon {
+//           position: relative;
+//         }
+
+//         .notification__counter {
+//           background-color: $light-green-color;
+//           width: 16px;
+//           height: 18px;
+//           border-radius: 10px;
+//           text-align: center;
+//           position: absolute;
+//           top: 20px;
+//           font-size: 15px;
+//           color: $white-color;
+//         }
+//       }
+
+//       .header__buttons {
+//         @include flex-center;
+//         gap: 12px;
+
+//         .button__upload {
+//           @include button($btn-color,
+//             $bg-color: $blue-color,
+//             $br-radius: $br-radius,
+//             $cursor: $cursor );
+//           padding: 12px 16px;
+//           color: $white-color;
+//           border: none;
+//           text-decoration: none;
+
+//           &:hover {
+//             transition: 0.3s ease-out;
+//             background-color: $white-color;
+//             color: $blue-color;
+//           }
+//         }
+
+//         .dropProfile {
+//           position: absolute;
+//           top: 60px;
+//           right: 160px;
+//         }
+
+//         .userIconWrapper {
+//           position: relative;
+//           @include flex-center;
+//           flex-direction: column;
+
+//           .button__wallet {
+//             width: 24px;
+//             height: 24px;
+//             cursor: pointer;
+
+//             &:hover {
+//               background: rgba(0, 0, 0, 0.1);
+//             }
+//           }
+
+//           .userDropdownList {
+//             position: absolute;
+//             top: 30px;
+//             left: 50%;
+//             transform: translateX(-50%);
+//             background: rgba(255, 255, 255, 0.9);
+//             border-radius: 5px;
+//             padding: 5px 0;
+//             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+//             display: block;
+//             opacity: 1;
+//             pointer-events: auto;
+
+//             .userDropdownItem {
+//               display: block;
+//               padding: 8px 15px;
+//               font-size: 14px;
+//               color: black;
+//               text-align: center;
+//               white-space: nowrap;
+//               text-decoration: none;
+
+//               &:hover {
+//                 background: rgba(0, 0, 0, 0.1);
+//               }
+//             }
+//           }
+//         }
+//       }
+
+//       .header__dropdown {
+//         display: none;
+//       }
+//     }
+//   }
+// }
+
+// @media (max-width: 1024px) {
+//   .header {
+//     .container {
+//       width: 100%;
+//       padding: 20px 80px;
+
+//       .header__content {
+//         @include flex-center;
+
+//         .header__left {
+//           .header__border {
+//             display: none;
+//           }
+
+//           .header__menu {
+//             .header__list {
+//               display: none;
+//             }
+//           }
+//         }
+
+//         .header__right {
+//           .right__notification {
+//             .notification__counter {
+//               top: 43px;
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+
+// @media (max-width: 902px) {
+//   .header {
+//     .container {
+//       width: 100%;
+
+//       .header__content {
+//         .header__left {
+//           .header__border {
+//             display: none;
+//           }
+
+//           .header__menu {
+//             .header__list {
+//               display: none;
+//             }
+//           }
+//         }
+
+//         .header__right {
+//           .search__form {
+//             display: none;
+//           }
+
+//           .right__notification {
+//             display: none;
+//           }
+
+//           .header__buttons {
+//             display: none;
+//           }
+
+//           .header__dropdown {
+//             display: block;
+//             background-color: $black-color;
+//             color: $white-color;
+//             border: none;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+
+// @media (max-width: 500px) {
+//   .header {
+//     .container {
+//       width: 100%;
+//       padding: 48px 32px;
+//     }
+//   }
+// }
+
+
+
+
+
+
+// @import "../../index.module.scss";
+
+// .header {
+//   width: 100%;
+//   height: 81px;
+//   padding: 20px 0;
+//   border-bottom: 1px solid $dark-gray;
+//   position: relative;
+
+//   .header__content {
+//     @include flex-container;
+//     width: 100%;
+
+//     .header__left {
+//       @include flex-center;
+
+//       .header__border {
+//         display: block;
+//         border-right: 2px solid $dark-gray;
+//         margin: 0 32px;
+//         height: 40px;
+//       }
+
+//       .header__menu {
+//         @include flex-center;
+
+//         .header__list {
+//           @include flex-center;
+
+//           li {
+//             &:last-of-type {
+//               margin-left: 32px;
+//             }
+
+//             a {
+//               text-decoration: none;
+//               @include text-style($text-color, $fz, $lh, $fw);
+//             }
+//           }
+//         }
+//       }
+//     }
+
+//     .header__right {
+//       @include flex-center;
+
+//       .search__form {
+//         position: relative;
+//         margin-right: 36px;
+
+//         .search__input {
+//           border: 2px solid $dark-gray;
+//           padding: 10px 16px;
+//           border-radius: 8px;
+//           width: 256px;
+//           height: 40px;
+//           background-color: transparent;
+
+//           &::placeholder {
+//             color: $muted-blue;
+//             font-weight: 400;
+//             font-size: 12px;
+//             line-height: 20px;
+//           }
+
+//           &:focus {
+//             outline: none;
+//             color: $muted-blue;
+//           }
+//         }
+
+//         .search__icon {
+//           position: absolute;
+//           top: 10px;
+//           right: 10px;
+//         }
+//       }
+
+//       .right__notification {
+//         margin-right: 24px;
+//         background: transparent;
+//         border: none;
+//         cursor: pointer;
+
+//         .notification__icon {
+//           position: relative;
+//         }
+
+//         .notification__counter {
+//           background-color: $light-green-color;
+//           width: 16px;
+//           height: 18px;
+//           border-radius: 10px;
+//           text-align: center;
+//           position: absolute;
+//           top: 20px;
+//           font-size: 15px;
+//           color: $white-color;
+//         }
+//       }
+
+//       .header__buttons {
+//         @include flex-center;
+//         gap: 12px;
+
+//         .button__upload {
+//           @include button($btn-color,
+//             $bg-color: $blue-color,
+//             $br-radius: $br-radius,
+//             $cursor: $cursor );
+//           padding: 12px 16px;
+//           color: $white-color;
+//           border: none;
+//           text-decoration: none;
+
+//           &:hover {
+//             transition: 0.3s ease-out;
+//             background-color: $white-color;
+//             color: $blue-color;
+//           }
+//         }
+
+//         .dropProfile {
+//           position: absolute;
+//           top: 60px;
+//           right: 160px;
+//         }
+
+//         .userIconWrapper {
+//           position: relative;
+//           @include flex-center;
+//           flex-direction: column;
+
+//           &:hover .userDropdownList {
+//             opacity: 1;
+//             pointer-events: auto;
+//             display: block;
+//           }
+
+//           .button__wallet {
+//             width: 24px;
+//             height: 24px;
+//             cursor: pointer;
+
+//             &:hover {
+//               background: rgba(0, 0, 0, 0.1);
+//             }
+//           }
+
+//           .userDropdownList {
+//             position: absolute;
+//             top: 30px;
+//             left: 50%;
+//             transform: translateX(-50%);
+//             background: rgba(255, 255, 255, 0.9);
+//             border-radius: 5px;
+//             padding: 5px 0;
+//             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+//             opacity: 0;
+//             pointer-events: none;
+//             transition: opacity 0.3s ease-in-out;
+//             display: block;
+
+//             .userDropdownItem {
+//               display: block;
+//               padding: 8px 15px;
+//               font-size: 14px;
+//               color: black;
+//               text-align: center;
+//               white-space: nowrap;
+//               text-decoration: none;
+
+//               &:hover {
+//                 background: rgba(0, 0, 0, 0.1);
+//               }
+//             }
+//           }
+//         }
+//       }
+
+//       .header__dropdown {
+//         display: none;
+//       }
+//     }
+//   }
+// }
+
+// @media (max-width: 1024px) {
+//   .header {
+//     .container {
+//       width: 100%;
+//       padding: 20px 80px;
+
+//       .header__content {
+//         @include flex-center;
+
+//         .header__left {
+//           .header__border {
+//             display: none;
+//           }
+
+//           .header__menu {
+//             .header__list {
+//               display: none;
+//             }
+//           }
+//         }
+
+//         .header__right {
+//           .right__notification {
+//             .notification__counter {
+//               top: 43px;
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+
+// @media (max-width: 902px) {
+//   .header {
+//     .container {
+//       width: 100%;
+
+//       .header__content {
+//         .header__left {
+//           .header__border {
+//             display: none;
+//           }
+
+//           .header__menu {
+//             .header__list {
+//               display: none;
+//             }
+//           }
+//         }
+
+//         .header__right {
+//           .search__form {
+//             display: none;
+//           }
+
+//           .right__notification {
+//             display: none;
+//           }
+
+//           .header__buttons {
+//             display: none;
+//           }
+
+//           .header__dropdown {
+//             display: block;
+//             background-color: $black-color;
+//             color: $white-color;
+//             border: none;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+
+// @media (max-width: 500px) {
+//   .header {
+//     .container {
+//       width: 100%;
+//       padding: 48px 32px;
+//     }
+//   }
+// }

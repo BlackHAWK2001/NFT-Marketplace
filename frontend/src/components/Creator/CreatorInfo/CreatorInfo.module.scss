@@ -1,0 +1,41 @@
+@import '../../../index.module.scss';
+
+.creator__wrapper {
+    padding: 128px 0;
+    @include flex-center;
+    justify-content: center;
+    .creator__description {
+      @include flex-center;
+      justify-content: center;
+      flex-direction: column;
+      .creator__topTitle {
+        @include text-style($text-color, $fz: 12px, $lh: 12px, $fw: 700);
+        text-align: center;
+      }
+      .creator__title {
+        @include text-style(
+          $text-color: $white-color,
+          $fz: 40px,
+          $lh: 48px,
+          $fw: 700
+        );
+        margin-top: 8px;
+      }
+      .creator__button {
+        text-align: center;
+        border-radius: 90px;
+        margin-top: 24px;
+        padding: 13px 24px;
+        border: 2px solid $muted-blue;
+        width: 184px;
+        height: 50px;
+        color: $white-color;
+        cursor: pointer;
+        &:hover {
+          transition: 0.3s ease-in-out;
+          background-color: $muted-blue;
+        }
+      }
+    }
+  }
+  

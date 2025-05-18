@@ -1,0 +1,59 @@
+@import "../../index.module.scss";
+
+.breadCrumps {
+  border-bottom: 2px solid $dark-gray;
+
+  .breadCrumpsContent {
+    @include flex-container;
+    padding: 24px 0;
+    .breadCrumpsLeft {
+      a {
+        text-decoration: none;
+      }
+
+      .arrowLeft {
+        @include flex-center;
+        @include button(
+          $btn-color: $white-color,
+          $bg-color: transparent,
+          $br-radius: 90px,
+          $cursor: pointer
+        );
+        border: 2px solid $dark-gray;
+        padding: 12px 6px;
+        width: 159px;
+        height: 40px;
+        transition: 0.3s;
+
+        &:hover {
+          background-color: $dark-gray;
+        }
+      }
+    }
+    .breadCrumpsRight {
+      @include flex-center;
+      gap: 24px;
+      .breadCrumpsTitle {
+        text-decoration: none;
+        @include text-style(
+          $text-color: $muted-blue,
+          $fz: 14px,
+          $lh: 16px,
+          $fw: 700
+        );
+        &:hover {
+          color: $white-color;
+          transition: 0.3s;
+        }
+      }
+      .breadCrumpsSegment {
+        @include text-style(
+          $text-color: $white-color,
+          $fz: 14px,
+          $lh: 16px,
+          $fw: 700
+        );
+      }
+    }
+  }
+}

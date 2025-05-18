@@ -1,0 +1,132 @@
+@import "../../index.module.scss";
+@import "../../pages/OneItem/OneItem.module";
+
+.sellerСontainer {
+  padding: 128px 0 125px 0;
+  background-color: $slate-gray;
+  background-size: cover;
+
+  .sellerTop {
+    margin-bottom: 64px;
+    @include flex-container;
+  }
+
+  .sellerLeft {
+    .sellerLeftBlock {
+      .popular {
+        @include text-style($text-color: $muted-blue,
+          $fz: 24px,
+          $lh: 20px,
+          $fw: 900);
+        margin-bottom: 5px;
+      }
+
+      .sellers {
+        font-size: 40px;
+        color: $white-color;
+        @include flex-center;
+        align-items: end;
+      }
+    }
+  }
+
+  .sellerRight {
+    .rightBlock {
+      .timeFrame {
+        @include text-style($text-color: $light-gray,
+          $fz: 12px,
+          $lh: 20px,
+          $fw: 900);
+        margin-bottom: 12px;
+      }
+    }
+  }
+
+  .sellerContent {
+    gap: 32px;
+    @include flex-center;
+    align-items: start;
+    flex-wrap: wrap;
+
+    .sellerCard {
+      background-color: $black-color;
+      padding: 24px;
+      width: calc(20% - 128px / 5);
+      border-radius: 16px;
+      transition: transform 0.5s ease, box-shadow 0.3s ease;
+
+      .cardHead {
+        @include flex-container;
+        margin-bottom: 24px;
+        padding-bottom: 24px;
+        border-bottom: 1px solid $dark-gray;
+
+        .cardBadge {
+          display: flex;
+          gap: 7px;
+          background-color: $blue-color;
+          padding: 5px;
+          border-radius: 24px;
+          color: $white-color;
+        }
+
+        .cardHead__icons {
+          @include flex-center;
+          gap: 10px;
+        }
+      }
+
+      .filterResult {
+        &__item {
+          .avatarWrapper {
+            position: relative;
+            @include flex-center;
+            align-items: start;
+            justify-content: center;
+            margin-bottom: 15px;
+
+            .avatar {
+              height: 64px;
+              width: 64px;
+            }
+
+            .assignment {
+              position: absolute;
+              top: 42px;
+              left: 42px;
+              transform: translateY(calc(50% - 15px)) translateX(calc(50% + 40px));
+            }
+          }
+
+          .peopleInfo {
+            text-align: center;
+            @include text-style($text-color: $white-color,
+              $fz: 14px,
+              $lh: 20px,
+              $fw: 500);
+            letter-spacing: 0.3px;
+
+            .amountOfEthereum {
+              @include text-style($text-color: $white-color,
+                $fz: 12px,
+                $lh: 20px,
+                $fw: 700);
+              margin-top: 10px;
+
+              span {
+                font-weight: 500;
+                color: $muted-blue;
+                text-transform: uppercase;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .sellerCard:hover {
+      transform: translateY(10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+  }
+}

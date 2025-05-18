@@ -1,0 +1,249 @@
+@import '../../index.module.scss';
+
+.oneItem {
+  padding: 80px 0;
+  @include flex-center;
+  align-items: start;
+  gap: 96px;
+
+  .oneItem__image {
+    border-radius: 16px;
+    width: 50%;
+    height: max-content;
+  }
+
+  .oneItem__info {
+    h1 {
+      color: $white-color;
+      @include text-style($text-color: $white-color,
+        $fz: 48px,
+        $lh: 20px,
+        $fw: 500);
+      margin-bottom: 50px;
+    }
+
+    .pricesAndStock {
+      @include flex-center;
+      gap: 8px;
+
+      .discover__card__price,
+      .discover__card__price_dark,
+      .pricesAndStock__inStock {
+        display: inline-block;
+        color: $light-green-color;
+        border: 1px solid $light-green-color;
+        border-radius: 4px;
+        padding: 6px 8px;
+        @include text-style($text-color: $light-green-color,
+          $fz: 16px,
+          $lh: 20px,
+          $fw: 500);
+
+        &_dark {
+          border: 1px solid #353945;
+          color: $muted-blue;
+        }
+      }
+
+      .pricesAndStock__inStock {
+        color: $muted-blue;
+        border: none;
+      }
+    }
+
+    .oneItem__desc {
+      @include text-style($text-color: $dark-gray,
+        $fz: 16px,
+        $lh: 20px,
+        $fw: 500);
+      margin: 40px 0;
+
+      &__link {
+        display: block;
+        color: $white-color;
+      }
+    }
+
+    .peopleFilter {
+      .catogories {
+        @include flex-container;
+        align-items: start;
+        color: $muted-blue;
+        border-radius: 36px;
+        border: 2px solid $dark-gray;
+        padding: 6px;
+        gap: 20px;
+
+        .category {
+          padding: 6px 12px;
+        }
+      }
+
+      .filterResult {
+        margin-top: 16px;
+
+        &__item {
+          @include flex-center;
+          margin-top: 16px;
+          padding: 16px 0;
+          border-bottom: 2px solid $dark-gray;
+
+          .avatarWrapper {
+            position: relative;
+
+            .avatarDec {
+              position: absolute;
+              top: 25px;
+              left: 28px;
+            }
+          }
+
+          .avatar {
+            height: 48px;
+            width: 48px;
+          }
+
+          .peopleInfo {
+            margin-left: 16px;
+
+            .assignment {
+              color: $muted-blue;
+              @include text-style($text-color: $dark-gray,
+                $fz: 16px,
+                $lh: 20px,
+                $fw: 500);
+              margin-bottom: 8px;
+            }
+
+            .name {
+              font-size: 14px;
+              color: $white-color;
+            }
+          }
+        }
+      }
+    }
+
+    .highestBid {
+      background-color: $slate-gray;
+      border-radius: 16px;
+      padding: 24px;
+      margin-top: 68px;
+
+      .highestBid__head {
+        @include flex-center;
+        gap: 16px;
+        color: $muted-blue;
+        font-size: 24px;
+
+        .bidInfo {
+          &__head {
+            font-size: 16px;
+            margin-bottom: 5px;
+            font-weight: 700;
+
+            .name {
+              margin-left: 8px;
+            }
+          }
+
+          &__price {
+            font-weight: 900;
+
+            .ethereum {
+              margin-right: 10px;
+            }
+          }
+        }
+
+        img {
+          height: 48px;
+          width: 48px;
+        }
+
+        .name,
+        .ethereum {
+          color: $white-color;
+        }
+      }
+
+      &__buttons {
+        margin: 32px 0;
+        gap: 8px;
+        @include flex-center;
+
+        button {
+          display: block;
+          background: transparent;
+          border: none;
+          color: $white-color;
+          padding: 16px 30px;
+          border-radius: 90px;
+          transition: all .3s ease-in-out;
+        }
+
+        .button_blue {
+          background-color: $blue-color;
+        }
+
+        .button_blue:hover {
+          background: $blue-color;
+        }
+
+        .button_dark {
+          border: 2px solid $dark-gray;
+          padding: 16px 40px;
+        }
+
+        .button_dark:hover {
+          background-color: $muted-blue;
+        }
+      }
+
+      &__bottom {
+        @include text-style($text-color: $muted-blue,
+          $fz: 14px,
+          $lh: 20px,
+          $fw: 500);
+        gap: 12px;
+        @include flex-center;
+        align-items: start;
+
+        span {
+          display: block;
+        }
+
+        .whiteText {
+          color: $white-color;
+        }
+      }
+    }
+  }
+
+  .buttons {
+    @include flex-center;
+    align-items: start;
+    flex-direction: column;
+    gap: 16px;
+
+    &__button {
+      background: transparent;
+      border-radius: 50%;
+      border: 2px solid $dark-gray;
+      padding: 22px 25px;
+      cursor: pointer;
+
+
+      .deleteIcon,
+      .editIcon,
+      .addBudAuction {
+        width: 24px;
+        height: 24px;
+      }
+
+      &:hover {
+        background-color: rgb(70, 70, 70);
+      }
+    }
+  }
+}

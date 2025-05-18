@@ -1,0 +1,36 @@
+@import "../modalFollowSteps/ModalFollowSteps.module.scss";
+
+.modalWrapper {
+  &__purshasing {
+    color: $muted-blue;
+    font-size: 18px;
+  }
+
+  &__form {
+    @include flex-center;
+    align-items: start;
+    flex-direction: column;
+    gap: 16px;
+    font-weight: 600;
+    width: 100%;
+
+    label {
+      font-size: 24px;
+      color: $white-color;
+    }
+
+    .modalWrapper__input {
+      color: $muted-blue;
+      padding-bottom: 12px;
+      border: none;
+      border-bottom: 1px solid $dark-gray;
+      background: none;
+      font-size: 16px;
+      width: 100%;
+    }
+
+    .modalWrapper__input:focus {
+      outline: none;
+    }
+  }
+}

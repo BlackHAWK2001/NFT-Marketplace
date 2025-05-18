@@ -1,0 +1,106 @@
+@import "../../index.module.scss";
+@import "../modalFollowSteps/ModalFollowSteps.module.scss";
+
+.modalWrapper {
+  margin: 20px 0 0 20px;
+  color: #f4f5f6;
+  @include flex-center;
+  align-items: start;
+  flex-direction: column;
+  max-width: 448px;
+  background-color: $black-color;
+  border: 2px solid $slate-gray;
+  border-radius: 20px;
+  padding: 32px;
+}
+
+.modal {
+
+
+  .gapWrapper {
+    gap: 32px;
+    @include flex-center;
+    align-items: start;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .closeIcon {
+    height: 40px;
+    width: 40px;
+    margin-left: auto;
+  }
+
+  h1 {
+    font-size: 48px;
+  }
+
+  &__subtitle,
+  h1 {
+    text-align: center;
+    width: 100%;
+  }
+
+  &__content {
+    width: 100%;
+    border: 1px solid $dark-gray;
+    padding: 24px;
+    border-radius: 12px;
+    display: flex;
+
+    @include flex-container;
+
+    &__left,
+    &__right {
+      @include flex-center;
+      align-items: start;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    &__left {
+      &_status {
+        color: $muted-blue;
+      }
+
+      &_processing {
+        color: $blue-color;
+      }
+    }
+
+    &__right {
+      &_transaction {
+        color: $muted-blue;
+      }
+
+      &_wallet {
+        color: $white-color;
+      }
+    }
+  }
+
+  &__socialsBlock {
+    text-align: center;
+    width: 100%;
+
+    .modal__socials {
+      @include flex-center;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 16px;
+
+      &__social {
+        border: 2px solid $dark-gray;
+        padding: 12px;
+        border-radius: 50%;
+        @include flex-center;
+        justify-self: center;
+
+        &_img {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+  }
+}

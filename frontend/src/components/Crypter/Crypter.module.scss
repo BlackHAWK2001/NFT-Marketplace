@@ -1,0 +1,80 @@
+@import "../../index.module.scss";
+
+.crypter {
+  background-color: $black-color;
+  margin-top: 129px;
+  
+  .crypterContent {
+    padding: 80px 0;
+    @include flex-center;
+    .crypterLeft {
+      .crypterHeaderTitle {
+        @include text-style(
+          $text-color: $muted-blue,
+          $fz: 16px,
+          $lh: 16px,
+          $fw: 600
+        );
+        font-family: $font-family-alt;
+        margin-bottom: 12px;
+      }
+
+      .crypterTitle {
+        @include text-style(
+          $text-color: $white-color,
+          $fz: 64px,
+          $lh: 64px,
+          $fw: 600
+        );
+        width: 455px;
+        margin-bottom: 20px;
+      }
+      .crypterSubtitle {
+        @include text-style(
+          $text-color: $muted-blue,
+          $fz: 16px,
+          $lh: 24px,
+          $fw: 500
+        );
+        font-family: $font-family-alt;
+        margin-bottom: 40px;
+      }
+
+      .crypterButtons {
+        .crypterButtonEarn {
+          @include button(
+            $btn-color: $white-color,
+            $bg-color: $blue-color,
+            $br-radius: 90px,
+            $cursor: pointer
+          );
+          border: none;
+          padding: 16px 24px;
+
+          &:hover {
+            background-color: $white-color;
+            color: $black-color;
+            transition: 0.3s;
+          }
+        }
+        .crypterButtonDiscover {
+          @include button(
+            $btn-color: $white-color,
+            $bg-color: transparent,
+            $br-radius: 90px,
+            $cursor: pointer
+          );
+          padding: 16px 24px;
+          border: 2px solid $muted-blue;
+          text-decoration: none;
+
+          &:hover {
+            background-color: $muted-blue;
+            color: $white-color;
+            transition: 0.3s;
+          }
+        }
+      }
+    }
+  }
+}

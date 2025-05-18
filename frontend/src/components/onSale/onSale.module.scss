@@ -1,0 +1,104 @@
+@import "../../index.module.scss";
+
+.onSale {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+
+  .noItem {
+    color: $white-color;
+  }
+  
+  .tabBlock {
+    @include flex-center;
+    align-items: center;
+    flex-direction: column;
+    .nftImg {
+      width: 245px;
+      height: 303px;
+      border-radius: 16px;
+      margin-bottom: 20px;
+    }
+    .nftInfo {
+      @include flex-center;
+      align-items: center;
+      flex-direction: column;
+
+      .infoTop {
+        @include flex-container;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 12px;
+
+        .nftTitle {
+          @include text-style(
+            $text-color: $white-color,
+            $fz: 16px,
+            $lh: 24px,
+            $fw: 500
+          );
+          font-family: $font-family-alt;
+        }
+        .nftPrice {
+          @include text-style(
+            $text-color: $light-green-color,
+            $fz: 12px,
+            $lh: 12px,
+            $fw: 700
+          );
+          background: none;
+          border: 2px solid $light-green-color;
+          padding: 8px;
+          border-radius: 4px;
+          font-family: $font-family-alt;
+        }
+      }
+
+      .nftInfoLine {
+        display: block;
+        width: 245px;
+        height: 1px;
+        background-color: $dark-gray;
+        margin-bottom: 12px;
+      }
+
+      .infoBottom {
+        @include flex-container;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+
+        .bottomTitle {
+          @include text-style(
+            $text-color: $muted-blue,
+            $fz: 12px,
+            $lh: 20px,
+            $fw: 400
+          );
+          font-family: $font-family-alt;
+
+          .bottomPRoce {
+            @include text-style(
+              $text-color: $white-color,
+              $fz: 12px,
+              $lh: 20px,
+              $fw: 600
+            );
+            font-family: $font-family-alt;
+            margin-left: 4px;
+          }
+        }
+
+        .bottomNewBild {
+          @include text-style(
+            $text-color: $white-color,
+            $fz: 12px,
+            $lh: 20px,
+            $fw: 400
+          );
+          font-family: $font-family-alt;
+        }
+      }
+    }
+  }
+}

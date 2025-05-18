@@ -1,0 +1,245 @@
+@import '../../index.module.scss';
+
+.editPage {
+  .editPageContent {
+    @include flex-center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 736px;
+    margin: 80px auto 0;
+    border-bottom: 1px solid $dark-gray;
+
+    //   height: auto;
+    .contentTop {
+      margin-bottom: 64px;
+
+      .contentTitle {
+        @include text-style($text-color: $white-color,
+          $fz: 48px,
+          $lh: 56px,
+          $fw: 700);
+        margin-bottom: 16px;
+      }
+
+      .contentSubtitle {
+        @include text-style($text-color: $muted-blue,
+          $fz: 14px,
+          $lh: 24px,
+          $fw: 400);
+        font-family: $font-family-alt;
+
+        span {
+          @include text-style($text-color: $white-color,
+            $fz: 14px,
+            $lh: 24px,
+            $fw: 500);
+        }
+      }
+    }
+
+    .contentBottom {
+      @include flex-center;
+      align-items: flex-start;
+      gap: 32px;
+      width: 736px;
+
+      .contentLeft {
+        @include flex-center;
+        align-items: flex-start;
+        width: 352px;
+        height: auto;
+        gap: 32px;
+
+        .userAvater {
+          width: 128px;
+          height: auto;
+        }
+
+        .userInfo {
+
+          .userInfoTitle {
+            @include text-style($text-color: $white-color,
+              $fz: 16px,
+              $lh: 24px,
+              $fw: 500);
+            font-family: $font-family-alt;
+            margin-bottom: 8px;
+          }
+
+          .userInfoDescription {
+            @include text-style($text-color: $muted-blue,
+              $fz: 12px,
+              $lh: 20px,
+              $fw: 400);
+            font-family: $font-family-alt;
+            margin-bottom: 16px;
+
+          }
+
+          .buttonUpload {
+            @include button($btn-color: $white-color, $bg-color: transparent, $br-radius: 90px, $cursor: pointer);
+            border: 2px solid $dark-gray;
+            padding: 12px 16px;
+            transition: .3s;
+
+            &:hover {
+              background-color: $dark-gray;
+            }
+          }
+        }
+      }
+
+      .contentRight {
+        width: 352px;
+        @include flex-center;
+        align-items: flex-start;
+        flex-direction: column;
+
+        .contentRightTilte {
+          @include text-style($text-color: $white-color,
+            $fz: 16px,
+            $lh: 24px,
+            $fw: 500);
+          font-family: $font-family-alt;
+          margin-bottom: 32px;
+        }
+
+        .contentRightForm {
+
+          .formBlock {
+            @include flex-center;
+            align-items: flex-start;
+            flex-direction: column;
+
+            .formLabel {
+              @include text-style($text-color: $dark-gray,
+                $fz: 12px,
+                $lh: 12px,
+                $fw: 700);
+              font-family: $font-family-alt;
+              margin-bottom: 12px;
+            }
+
+            .formInput,
+            .formBio {
+              width: 352px;
+              padding: 12px 16px;
+              margin-bottom: 32px;
+              background: transparent;
+              border: 2px solid $dark-gray;
+              border-radius: 12px;
+              @include text-style($text-color: $white-color,
+                $fz: 14px,
+                $lh: 24px,
+                $fw: 500);
+              font-family: $font-family-alt;
+
+              &::placeholder {
+                @include text-style($text-color: $muted-blue,
+                  $fz: 14px,
+                  $lh: 24px,
+                  $fw: 500);
+                font-family: $font-family-alt;
+              }
+
+              &:focus {
+                outline: none;
+              }
+            }
+
+
+            .formTwitter {
+              @include flex-center;
+              position: relative;
+
+              .formVerifyBtn {
+                @include button($btn-color: $white-color, $bg-color: transparent, $br-radius: 90px, $cursor: pointer);
+                border: 2px solid $muted-blue ;
+                padding: 9px;
+                width: 122px;
+                position: absolute;
+                top: 8px;
+                right: 12px;
+
+                &:hover {
+                  background-color: $muted-blue;
+                  transition: .3s;
+                }
+              }
+            }
+          }
+
+          .formSocial {
+            @include text-style($text-color: $white-color,
+              $fz: 16px,
+              $lh: 24px,
+              $fw: 500);
+            font-family: $font-family-alt;
+            margin-bottom: 32px;
+          }
+
+          .newLink {
+            @include flex-center;
+            @include button($btn-color: $muted-blue, $bg-color: transparent, $br-radius: 90px, $cursor: pointer);
+            padding: 12px 16px;
+            border: 2px solid $muted-blue;
+            transition: .3s;
+            margin-bottom: 40px;
+
+            &:hover {
+              border: 2px solid $white-color;
+              color: $white-color;
+            }
+
+            .newLinkIcon {
+              margin-right: 12px;
+
+            }
+          }
+
+          .editDescription {
+            width: 352px;
+            height: 72px;
+            @include text-style($text-color: $muted-blue,
+              $fz: 14px,
+              $lh: 24px,
+              $fw: 400);
+            font-family: $font-family-alt;
+            margin-bottom: 40px;
+          }
+
+          .editpageLine {
+            display: block;
+            height: 1px;
+            background-color: $muted-blue;
+            width: 100%;
+            margin-bottom: 40px;
+          }
+
+          .editButtons {
+            @include flex-center;
+            gap: 32px;
+            margin-bottom: 136px;
+
+            .updateButton {
+              @include button($btn-color: $white-color, $bg-color: $blue-color, $br-radius: 90px, $cursor: pointer);
+              padding: 16px 24px;
+
+              border: none;
+              transition: .3s;
+
+              &:hover {
+                background-color: $white-color;
+                color: $blue-color;
+              }
+            }
+
+            .clearButton {
+              @include clear-button;
+            }
+          }
+        }
+      }
+    }
+  }
+}

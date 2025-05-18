@@ -1,0 +1,95 @@
+@import '../../index.module.scss';
+
+.frequently {
+  margin: 80px 0 136px 0;
+
+  .frequentlyContent {
+    .frequentlyTop {
+      margin-bottom: 80px;
+
+      color: white;
+
+      .frequentlyAbout {
+        @include text-style($text-color: $muted-blue,
+          $fz: 12px,
+          $lh: 12px,
+          $fw: 700);
+        margin-bottom: 12px;
+        font-family: $font-family-alt;
+      }
+
+      .frequentlyTitle {
+        @include text-style($text-color: $white-color,
+          $fz: 48px,
+          $lh: 56px,
+          $fw: 700);
+        margin-bottom: 20px;
+      }
+
+      .frequentlySubtitle {
+        @include text-style($text-color: $dark-white,
+          $fz: 16px,
+          $lh: 24px,
+          $fw: 400);
+        width: 640px;
+
+        font-family: $font-family-alt;
+
+        .frequentlySupport {
+          @include text-style($text-color: $blue-color,
+            $fz: 16px,
+            $lh: 24px,
+            $fw: 500);
+          font-family: $font-family-alt;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .frequentlyBottom {
+      @include flex-container;
+      align-items: flex-start;
+
+
+      .frequentlyLeft {
+        width: 160px;
+        height: 184px;
+
+
+
+        .frequentlyAsideBlock {
+          @include flex-center;
+          margin-bottom: 40px;
+
+          img {
+            width: 16px;
+            height: 16px;
+          }
+
+
+
+
+          .frequentlyTitleActive {
+            @include text-style($text-color: $white-color, $fz: 16px, $lh: 12px, $fw: 700);
+            text-decoration: none;
+            margin-left: 16px;
+
+          }
+
+          .frequentlyBlockTitle {
+            @include text-style($text-color: $muted-blue, $fz: 16px, $lh: 12px, $fw: 700);
+            margin-left: 16px;
+          }
+        }
+      }
+
+      .frequentlyRight {
+        width: 735px;
+        height: auto;
+        color: $white-color;
+
+        .frequentlyAccordion {}
+      }
+    }
+  }
+}

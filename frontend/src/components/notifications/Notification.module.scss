@@ -1,0 +1,80 @@
+@import "../../index.module.scss";
+
+.notification {
+  width: 396px;
+  height: auto;
+  background: none;
+  background: $black-color;
+  position: absolute;
+  top: 104px;
+  right: 249px;
+  z-index: 1;
+  border-radius: 24px;
+
+  .notificationBlock {
+    width: 396px;
+    padding: 24px;
+    .notificationTop {
+      @include flex-center;
+      justify-content: space-between;
+
+      .notificationTitle {
+        @include text-style(
+          $text-color: $white-color,
+          $fz: 32px,
+          $lh: 40px,
+          $fw: 700
+        );
+
+        margin: 0 16px 16px;
+      }
+      .notificationButton {
+        @include button(
+          $btn-color: $white-color,
+          $bg-color: $blue-color,
+          $br-radius: 90px,
+          $cursor: pointer
+        );
+        padding: 12px 16px;
+        border: none;
+        transition: 0.3s;
+
+        &:hover {
+          background-color: $white-color;
+          color: $blue-color;
+        }
+      }
+    }
+
+    .notificationContent {
+      padding: 18px 16px;
+      @include flex-container;
+      .notificationImage {
+        width: 64px;
+        height: 64px;
+      }
+      .notificationBlockInfo {
+        .notificationContTitle {
+          @include text-style(
+            $text-color: $white-color,
+            $fz: 14px,
+            $lh: 24px,
+            $fw: 500
+          );
+          font-family: $font-family-alt;
+          width: 208px;
+          height: 48px;
+        }
+        .notificationDate {
+          @include text-style(
+            $text-color: $muted-blue,
+            $fz: 12px,
+            $lh: 20px,
+            $fw: 400
+          );
+          font-family: $font-family-alt;
+        }
+      }
+    }
+  }
+}

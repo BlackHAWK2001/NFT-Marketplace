@@ -1,0 +1,99 @@
+@import "../../index.module.scss";
+
+.myWallet {
+    text-decoration: none;
+
+    margin-left: 50px;
+    margin-top: 20px;
+    color: $muted-blue;
+    padding: 32px 16px;
+    background-color: $slate-gray;
+    width: fit-content;
+    border-radius: 12px;
+
+    h2 {
+        color: $white-color;
+        margin-bottom: 4px;
+    }
+
+    &__link {
+        @include text-style($text-color: $white-color,
+            $fz: 14px,
+            $lh: 20px,
+            $fw: 700);
+
+        margin-bottom: 16px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    &__balance {
+        box-shadow: 0 4px 6px rgba(18, 27, 40, 0.8);
+        padding: 14px 8px 8px;
+        border-radius: 16px;
+
+        &_flex {
+            @include flex-center;
+        }
+
+        img {
+            background-color: $blue-color;
+            border-radius: 50%;
+            padding: 7px 12px;
+            margin-right: 16px;
+        }
+
+        &__title {
+            @include text-style($text-color: $white-color,
+                $fz: 12px,
+                $lh: 20px,
+                $fw: 500);
+        }
+
+        &__value {
+            @include text-style($text-color: $white-color,
+                $fz: 24px,
+                $lh: 20px,
+                $fw: 500);
+            font-weight: 700;
+        }
+
+        &__manageFun {
+            @include text-style($text-color: $white-color,
+                $fz: 14px,
+                $lh: 20px,
+                $fw: 700);
+            background: none;
+            border: 2px solid $dark-gray;
+            border-radius: 90px;
+            padding: 8px 20px;
+            margin-top: 10px;
+        }
+    }
+
+    &__navs {
+        margin-top: 24px;
+        display: flex;
+        flex-direction: column;
+
+        &__nav {
+            @include flex-center;
+            gap: 12px;
+
+            @include text-style($text-color: $muted-blue,
+            $fz: 14px,
+            $lh: 20px,
+            $fw: 700);
+
+            padding: 16px 0;
+            border: none;
+            border-bottom: 2px solid $dark-gray;
+            background-color: transparent;
+        }
+
+        &__nav:last-child {
+            border-bottom: none;
+        }
+    }
+}

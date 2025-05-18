@@ -1,0 +1,158 @@
+@import "../../index.module.scss";
+
+.profile {
+  padding-bottom: 136px;
+  border-bottom: 1px solid $dark-gray;
+  @include flex-container;
+  align-items: flex-start;
+  width: 1120px;
+  .aside {
+    background-color: $slate-gray;
+    width: 256px;
+    height: auto;
+    border-radius: 16px;
+    padding: 32px 35px;
+
+    .profileBlock {
+      @include flex-container;
+      flex-direction: column;
+      text-align: center;
+      .profileUserLogo {
+        width: 160px;
+        height: 160px;
+        margin-bottom: 24px;
+      }
+      .profileBlockInfo {
+        .profileName {
+          @include text-style(
+            $text-color: $white-color,
+            $fz: 24px,
+            $lh: 32px,
+            $fw: 600
+          );
+          font-family: $font-family-alt;
+          margin-bottom: 5px;
+        }
+        .profileQrcode {
+          @include flex-center;
+          justify-content: center;
+          margin-bottom: 20px;
+          .qrcode {
+            @include text-style(
+              $text-color: $white-color,
+              $fz: 14px,
+              $lh: 16px,
+              $fw: 700
+            );
+          }
+          .profileQrcodeImage {
+            margin-left: 8px;
+          }
+        }
+        .profileUserDescription {
+          @include text-style(
+            $text-color: $muted-blue,
+            $fz: 12px,
+            $lh: 20px,
+            $fw: 500
+          );
+          font-family: $font-family-alt;
+          margin-bottom: 20px;
+        }
+        .profileLink {
+          @include flex-center;
+          justify-content: center;
+          margin-bottom: 50px;
+          a {
+            text-decoration: none;
+          }
+
+          .socilalLinkImage {
+            margin-right: 8px;
+          }
+          .socilalLink {
+            @include text-style(
+              $text-color: $white-color,
+              $fz: 14px,
+              $lh: 16px,
+              $fw: 700
+            );
+          }
+        }
+      }
+      .profileFollowButton {
+        @include button(
+          $btn-color: $white-color,
+          $bg-color: $blue-color,
+          $br-radius: 90px,
+          $cursor: pointer
+        );
+        padding: 12px 16px;
+        border: none;
+        margin-bottom: 48px;
+
+        &:hover {
+          transition: 0.3s;
+          background-color: $white-color;
+          color: $blue-color;
+        }
+      }
+      .socilalLinks {
+        @include flex-container;
+        width: 108px;
+        margin-bottom: 48px;
+      }
+      .profileLine {
+        display: block;
+        height: 2px;
+        background-color: $dark-gray;
+        width: 199px;
+        margin-bottom: 48px;
+      }
+      .profileDate {
+        @include text-style(
+          $text-color: $muted-blue,
+          $fz: 12px,
+          $lh: 20px,
+          $fw: 400
+        );
+        font-family: $font-family-alt;
+      }
+    }
+  }
+
+  .content {
+    width: 800px;
+    @include flex-center;
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    .tabs {
+      width: 100%;
+      margin: 32px 0;
+      a {
+        text-decoration: none;
+        @include text-style(
+          $text-color: $muted-blue,
+          $fz: 14px,
+          $lh: 16px,
+          $fw: 700
+        );
+        margin-left: 40px;
+        &:first-child {
+          margin: 0;
+        }
+      }
+      .active {
+        @include button(
+          $btn-color: $black-color,
+          $bg-color: $white-color,
+          $br-radius: 100px,
+          $cursor: pointer
+        );
+        padding: 6px 12px;
+      }
+    }
+  }
+}

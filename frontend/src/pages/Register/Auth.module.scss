@@ -1,0 +1,87 @@
+@import '../../index.module.scss';
+
+.auth {
+
+  margin: 100px auto;
+
+  .authContent {
+    @include flex-center;
+    justify-content: center;
+
+
+    .authForm {
+      width: 450px;
+      height: 400px;
+      padding: 15px 25px 25px;
+      background-color: $black-color;
+      border: 2px solid $muted-blue;
+      border-radius: 50px;
+
+      .authTitle {
+        @include text-style($text-color: $white-color, $fz: 30px, $lh: 48px, $fw: 700);
+        font-family: $font-family-alt;
+        text-align: center;
+        margin-bottom: 25px;
+      }
+
+      .authInput {
+        padding: 8px 17px;
+        width: 100%;
+        border-radius: 12px;
+        border: 2px solid $dark-gray;
+        background-color: $black-color;
+        height: 48px;
+        margin-bottom: 25px;
+        outline: none;
+        color: $muted-blue;
+
+        &::placeholder,
+        &::-webkit-input-placeholder {
+          color: $muted-blue;
+        }
+
+        &::-moz-placeholder {
+          color: $muted-blue;
+        }
+
+        &:-ms-input-placeholder {
+          color: $muted-blue;
+        }
+
+        &:focus {
+          border: 2px solid $muted-blue !important;
+        }
+      }
+
+      .authBtns {
+        @include flex-center;
+        justify-content: center;
+
+        .authSubLinkBtn {
+          @include text-style($text-color: $muted-blue, $fz: 14px, $lh: 15px, $fw: 400);
+          font-family: $font-family-alt;
+          background: transparent;
+          color: $white-color;
+          border: 2px solid $muted-blue;
+          border-radius: 90px;
+          padding: 8px 17px;
+          height: 48px;
+          width: 100px;
+          margin-right: 30px;
+          cursor: pointer;
+        }
+
+        .authSubLinkBtnRegister {
+          background: transparent;
+          color: $white-color;
+          border: 2px solid $muted-blue;
+          border-radius: 90px;
+          padding: 8px 17px;
+          height: 48px;
+          width: 100px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
